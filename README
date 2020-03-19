@@ -1,0 +1,11 @@
+Simple lambda with multi module common backend for a few different lambda functions. Seems to nice idea for JVM applications,
+however compilation of an application to a native binary is quite slow, but acceptable on a modern hardware.
+Dirty version for early R&d, but might be useful in the future. Crated with JDK 11 and Graal 20 CE.
+
+To run native:
+$ mvn clean package -DskipTests -P native
+$ sam deploy -g -t sam.native.yml
+
+To run JVM:
+$ mvn clean package -DskipTests
+$ sam deploy -g -t sam.jvm.yml
